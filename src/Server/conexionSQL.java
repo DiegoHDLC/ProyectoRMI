@@ -1,4 +1,7 @@
+package Server;
+
 import java.sql.*;
+import Client.producto;
 
 public class conexionSQL {
     static Connection con = null;
@@ -11,8 +14,7 @@ public class conexionSQL {
             // conexion
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/rmi_database", "root", "");
-
+                    "jdbc:mysql://137.184.104.85:3306/rmi_remote_bd", "debian-sys-maint", "eNNgOWBO8FNtWfec");
             // sentencia / solicitud
             String query = "SELECT * FROM productos where codigo=" + codigo;
             ps = conexionSQL.con.prepareStatement(query);

@@ -1,3 +1,5 @@
+package Client;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Scanner;
@@ -7,10 +9,13 @@ public class Client {
     }
 
     public static void main(String[] args) throws Exception {
-        Registry reg = LocateRegistry.getRegistry(1099);
+
+        // retorna una referencia al registro de objeto remoto (un stub)
+        Registry reg = LocateRegistry.getRegistry("18.218.41.172", 1099);
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println("Ingrese codigo de busqueda: ");
+            System.out.println("- Ingrese 0 para salir ");
+            System.out.println("- Ingrese codigo de busqueda: ");
             int entrada = sc.nextInt();
             if (entrada == 0) {
                 return;

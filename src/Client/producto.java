@@ -1,3 +1,4 @@
+package Client;
 
 public class producto {
     private int codigo, stock, valor;
